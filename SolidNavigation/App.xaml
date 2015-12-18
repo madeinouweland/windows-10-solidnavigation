@@ -1,0 +1,15 @@
+﻿<Application
+    x:Class="SolidNavigation.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SolidNavigation"
+    xmlns:converters="using:SolidNavigation.Converters"
+    RequestedTheme="Light">
+    <Application.Resources>
+        <ResourceDictionary>
+            <converters:ListViewModelToObjectConverter x:Key="ListViewModelToObjectConverter" />
+            <converters:TaskViewModelToObjectConverter x:Key="TaskViewModelToObjectConverter" />
+            <converters:CommentViewModelToObjectConverter x:Key="CommentViewModelToObjectConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

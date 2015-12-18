@@ -1,0 +1,34 @@
+﻿<navigation:PageBase
+    x:Class="SolidNavigation.Main.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SolidNavigation"
+    xmlns:navigation="using:SolidNavigation.Navigation"
+    xmlns:lists="using:SolidNavigation.Lists"
+    NavigationCacheMode="Enabled"
+    xmlns:tasks="using:SolidNavigation.Tasks"
+    xmlns:details="using:SolidNavigation.Details"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <lists:ListsRegionView x:Name="listsregion" />
+        <Rectangle Width="1" HorizontalAlignment="Right" Fill="Gray"/>
+        <tasks:TasksRegionView x:Name="tasksregion" Grid.Column="1" />
+        <Rectangle Width="1" HorizontalAlignment="Right" Fill="Gray" Grid.Column="1"/>
+        <details:DetailsRegionView MinWidth="300" x:Name="detailsregion" Grid.Column="2" />
+
+        <TextBlock x:Name="NavInfo" Grid.Row="1" Height="100" Grid.ColumnSpan="3" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" FontSize="20" Margin="30" />
+    </Grid>
+</navigation:PageBase>

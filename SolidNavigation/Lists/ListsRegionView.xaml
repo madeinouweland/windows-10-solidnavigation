@@ -1,0 +1,27 @@
+﻿<UserControl
+    x:Class="SolidNavigation.Lists.ListsRegionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SolidNavigation.Lists"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid>
+        <ListView Margin="20,0,0,0" Grid.Row="1"
+                  x:Name="lists"
+                  SelectedItem="{x:Bind ViewModel.SelectedList, Mode=TwoWay, Converter={StaticResource ListViewModelToObjectConverter}}"
+                  ItemsSource="{x:Bind ViewModel.Lists}" >
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:ListViewModel">
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" FontSize="22" Glyph="&#xE179;"/>
+                        <TextBlock Margin="20,0,0,0" Text="{x:Bind Title}" Style="{StaticResource BodyTextBlockStyle}" FontSize="20" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</UserControl>
